@@ -37,8 +37,6 @@ int getkey() {
 	char ch[1];
 	poll(rdfd, 1, -1);
 	read(0, ch, 1);
-	if (ch[0] == 27) {
-		return handleEsc(rdfd);
-	}
+	if (ch[0] == 27) return handleEsc(rdfd);
 	return ch[0];
 }
